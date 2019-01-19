@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
       mgmt_config.vm.provider "virtualbox" do |vb|
         vb.memory = "256"
       end
-      mgmt_config.vm.provision :shell, path: "bootstrap-mgmt.sh"
       mgmt_config.vm.provision "file", source: "~/Virantha/Work/Vagrant/SSHKeys/private-key-for-ansible", destination: "/tmp/SSHKEYS/private-key-for-ansible"
+      mgmt_config.vm.provision :shell, path: "bootstrap-mgmt.sh"
 end
 
 
