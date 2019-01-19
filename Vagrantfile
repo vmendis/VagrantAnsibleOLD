@@ -43,6 +43,9 @@ end
         node.vm.provider "virtualbox" do |vb|
           vb.memory = "256"
         end
+        node.vm.provision "file", source: "~/Virantha/Work/Vagrant/SSHKeys/public-key-for-ansible", destination: "/tmp/SSHKEYS/public-key-for-ansible"
+        node.vm.provision :shell, path: "bootstrap-web.sh"
+        
     end
   end
 
