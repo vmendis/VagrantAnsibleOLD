@@ -10,6 +10,10 @@ apt-get -y install ansible
 # cp -a /vagrant/examples/* /home/vagrant
 # chown -R vagrant:vagrant /home/vagrant
 
+cp /vagrant/hosts /etc/ansible
+chown root:root /etc/ansible/hosts
+chmod 644 /etc/ansible/hosts
+
 # configure hosts file for our internal network defined by Vagrantfile
 cat <<EOT>> /etc/hosts
 
