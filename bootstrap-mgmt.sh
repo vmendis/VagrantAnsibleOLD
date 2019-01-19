@@ -19,6 +19,10 @@ cp /tmp/SSHKEYS/private-key-for-ansible ~vagrant/.ssh/id_rsa
 chown vagrant:vagrant ~vagrant/.ssh/id_rsa
 chmod 600 ~vagrant/.ssh/id_rsa
 
+# We want Ansible to run without errors
+echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+
+
 # configure hosts file for our internal network defined by Vagrantfile
 cat <<EOT>> /etc/hosts
 
