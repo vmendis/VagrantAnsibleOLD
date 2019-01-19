@@ -15,9 +15,10 @@ chown root:root /etc/ansible/hosts
 chmod 644 /etc/ansible/hosts
 
 # Copy ssh private key
-cp /tmp/SSHKEYS/private-key-for-ansible ~vagrant/.ssh/id_rsa
+mv /tmp/SSHKEYS/private-key-for-ansible ~vagrant/.ssh/id_rsa
 chown vagrant:vagrant ~vagrant/.ssh/id_rsa
 chmod 600 ~vagrant/.ssh/id_rsa
+rmdir /tmp/SSHKEYS
 
 # We want Ansible to run without errors
 echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
