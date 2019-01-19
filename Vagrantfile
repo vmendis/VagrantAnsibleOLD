@@ -10,7 +10,9 @@ Vagrant.configure("2") do |config|
         vb.memory = "256"
       end
       mgmt_config.vm.provision :shell, path: "bootstrap-mgmt.sh"
-  end
+      mgmt_config.vm.provision "file", source: "~/Virantha/Work/Vagrant/SSHKeys/private-key-for-ansible", destination: "/tmp/SSHKEYS/private-key-for-ansible"
+end
+
 
   # create load balancer
 
