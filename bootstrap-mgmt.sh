@@ -6,9 +6,10 @@ apt-add-repository -y ppa:ansible/ansible
 apt-get update
 apt-get -y install ansible
 
-# copy examples into /home/vagrant (from inside the mgmt node)
-# cp -a /vagrant/examples/* /home/vagrant
-# chown -R vagrant:vagrant /home/vagrant
+# copy config files into /home/vagrant/conf-files
+mkdir /home/vagrant/conf-files
+cp -a /vagrant/Files/* /home/vagrant/conf-files
+chown -R vagrant:vagrant /home/vagrant/conf-files
 
 cp /vagrant/hosts /etc/ansible
 chown root:root /etc/ansible/hosts
