@@ -25,7 +25,7 @@ end
         vb.memory = "256"
       end
       lb_config.vm.provision "file", source: "~/Virantha/Work/Vagrant/SSHKeys/public-key-for-ansible", destination: "/tmp/SSHKEYS/public-key-for-ansible"
-      lb_config.vm.provision :shell, path: "bootstrap-lb.sh"
+      lb_config.vm.provision :shell, path: "bootstrap-pub-ssh-keys.sh"
 
 
   end
@@ -44,7 +44,7 @@ end
           vb.memory = "256"
         end
         node.vm.provision "file", source: "~/Virantha/Work/Vagrant/SSHKeys/public-key-for-ansible", destination: "/tmp/SSHKEYS/public-key-for-ansible"
-        node.vm.provision :shell, path: "bootstrap-web.sh"
+        node.vm.provision :shell, path: "bootstrap-pub-ssh-keys.sh"
         
     end
   end
